@@ -9,6 +9,7 @@ import android.view.WindowManager;
 
 import com.example.yuchat.R;
 import com.example.yuchat.adapter.AdapterMainViewPager;
+import com.example.yuchat.util.ImageManager;
 import com.example.yuchat.view.LayoutChat;
 import com.example.yuchat.view.LayoutContract;
 import com.example.yuchat.view.LayoutMoment;
@@ -58,25 +59,25 @@ public class YuMain extends AppCompatActivity {
         tabList.get(1).setIcon(R.drawable.contactsunselected).setText("Contact");
         tabList.get(2).setIcon(R.drawable.momentunselected).setText("Moment");
 
-//        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                tabList.get(tab.getPosition()).setIcon(ImageManager.imageID[tab.getPosition()+3]);
-//                tabLayout.setTabTextColors(
-//                        ContextCompat.getColor(YuMain.this,R.color.colorBlack),
-//                        ContextCompat.getColor(YuMain.this,R.color.colorBlue)
-//                );
-//            }
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                tabList.get(tab.getPosition()).setIcon(ImageManager.imageID[tab.getPosition()+3]);
+                tabLayout.setTabTextColors(
+                        ContextCompat.getColor(YuMain.this,R.color.colorBlack),
+                        ContextCompat.getColor(YuMain.this,R.color.colorBlue)
+                );
+            }
 
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//                tabList.get(tab.getPosition()).setIcon(ImageManager.imageID[tab.getPosition()]);
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                tabList.get(tab.getPosition()).setIcon(ImageManager.imageID[tab.getPosition()]);
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
     }
 }

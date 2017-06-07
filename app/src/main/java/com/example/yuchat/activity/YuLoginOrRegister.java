@@ -19,7 +19,8 @@ import com.example.yuchat.R;
  * Created by Administrator on 2017/6/4.
  */
 
-public class YuLoginOrRegister extends AppCompatActivity {
+public class YuLoginOrRegister extends AppCompatActivity implements View.OnClickListener{
+
     private TabHost tabHost;
 
     private Button loginButton;
@@ -61,48 +62,34 @@ public class YuLoginOrRegister extends AppCompatActivity {
         tabHost.addTab(tabHost.newTabSpec("Login").setIndicator("Login").setContent(R.id.login_layout));
         tabHost.addTab(tabHost.newTabSpec("Register").setIndicator("Register").setContent(R.id.register_layout));
 
-//        for (int i = 0; i < 2; i++) {
-//            TextView tv = ((TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title));
-//            tv.setAllCaps(false);
-//            tv.setTextSize(16);
-//        }//不明白
+        for (int i = 0; i < 2; i++) {
+            TextView tv = ((TextView) tabHost.getTabWidget().getChildAt(i).findViewById(android.R.id.title));
+            tv.setAllCaps(false);
+            tv.setTextSize(16);
+        }//不明白
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(YuLoginOrRegister.this,YuMain.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(YuLoginOrRegister.this,YuMain.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+        loginButton.setOnClickListener(this);
+        registerButton.setOnClickListener(this);
 
     }
 
-//    @Override
-//    public void onClick(View v) {
-//        switch (v.getId()) {
-//            case R.id.login_layout: {
-//                Intent intent = new Intent(this,YuMain.class);
-//                startActivity(intent);
-//                finish();
-//                break;
-//            }
-//            case R.id.register_layout: {
-//                Intent intent = new Intent(this,YuMain.class);
-//                startActivity(intent);
-//                finish();
-//                break;
-//            }
-//            default:
-//                break;
-//        }
-//    }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.button_login: {
+                Intent intent = new Intent(this,YuMain.class);
+                startActivity(intent);
+                finish();
+                break;
+            }
+            case R.id.button_register: {
+                Intent intent = new Intent(this,YuMain.class);
+                startActivity(intent);
+                finish();
+                break;
+            }
+            default:
+                break;
+        }
+    }
 }

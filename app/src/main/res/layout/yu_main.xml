@@ -11,8 +11,19 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!--<org.yuchat.view.TitleBar>-->
-        <!--</org.yuchat.view.TitleBar>-->
+        <com.example.yuchat.view.TitleBar
+            android:id="@+id/titleBar"
+            app:leftText="ZZChat"
+            app:leftTextColor="#ffffff"
+            app:leftBackground="#00ffffff"
+            app:rightText="+"
+            app:rightTextSize="10sp"
+            app:rightTextColor="#ffffff"
+            app:rightBackground="#00ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        </com.example.yuchat.view.TitleBar>
+
 
         <android.support.v4.view.ViewPager
             android:id="@+id/vp_main"
@@ -36,6 +47,13 @@
         </android.support.design.widget.TabLayout>
 
     </LinearLayout>
+    
+    <com.example.yuchat.view.LayoutSlide
+        android:clickable="true"
+        android:layout_gravity="start"
+        android:layout_width="270dp"
+        android:layout_height="match_parent">
+    </com.example.yuchat.view.LayoutSlide>
 
 </android.support.v4.widget.DrawerLayout>
 

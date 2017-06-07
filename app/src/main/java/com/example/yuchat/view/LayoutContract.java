@@ -14,6 +14,7 @@ import com.example.yuchat.R;
  */
 
 public class LayoutContract extends Fragment{
+
     private View rootview;
 
     @Nullable
